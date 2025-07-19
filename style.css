@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #0078d7; /* Changed to blue */
+    color: rgb(255, 255, 255); /* Changed text to white for better contrast */
+    line-height: 2rem;
+}
+
+/* Logo */
+.img-logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.mail-title {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.mail-title-light {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: white; /* Changed to white */
+}
+
+/* Form Styling */
+.form-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+}
+
+input[type="text"], input[type="password"] {
+    background-color: transparent;
+    padding: 1.3rem;
+    border: none;
+    border-bottom: 2px solid #ffffffae; /* Changed to white with transparency */
+    font-size: 1.3rem;
+    transition: ease-in 0.5s;
+    color: white; /* Changed to white */
+    width: 100%;
+}
+
+input:focus {
+    border-bottom: 4px solid #ffffff; /* Changed to white */
+}
+
+::placeholder {
+    color: #ffffffae; /* Changed to white with transparency */
+    line-height: 2rem;
+}
+
+/* Submit Button */
+.submit-form {
+    margin-top: 1.5rem;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.9); /* Changed to white */
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.2); /* Changed to white with transparency */
+    border: none;
+    border-radius: 0.357rem;
+    transition: ease-in 0.5s;
+    cursor: pointer;
+}
+
+.submit-form:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Changed to white with more opacity */
+    color: #0078d7; /* Changed to match background blue */
+}
+
+.forgot-password {
+    color: white; /* Kept white */
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+/* Password Icon */
+.password-container {
+    width: 100%;
+    position: relative;
+}
+
+.password-icon {
+    position: absolute;
+    top: 35px;
+    right: 15px;
+    cursor: pointer;
+    color: #ffffffae; /* Changed to white with transparency */
+    font-size: 25px;
+}
+
+/* General Container */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Desktop View */
+@media screen and (min-width: 900px) {
+    .container {
+        width: 35%;
+        padding: 30px 0;
+    }
+}
